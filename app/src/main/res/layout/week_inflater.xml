@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+    <com.production.outlau.sextracker.MyLinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@android:color/transparent">
+
+        <LinearLayout
+            android:id="@+id/week_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
+
+    </com.production.outlau.sextracker.MyLinearLayout>
+</LinearLayout>
+    <!--
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/dejavusansmono"
+                android:gravity="center_vertical"
+                android:text="M\n28"
+                android:textAlignment="center"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/unprotected_sex" />
+
+            </TableRow>
+
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/gradient_border" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/dejavusansmono"
+                android:gravity="center_vertical"
+                android:text="M\n28"
+                android:textAlignment="center"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/unprotected_sex" />
+
+            </TableRow>
+
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/gradient_border" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/dejavusansmono"
+                android:gravity="center_vertical"
+                android:text="M\n28"
+                android:textAlignment="center"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/unprotected_sex" />
+
+            </TableRow>
+
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/gradient_border" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/dejavusansmono"
+                android:gravity="center_vertical"
+                android:text="M\n28"
+                android:textAlignment="center"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/unprotected_sex" />
+
+            </TableRow>
+
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/gradient_border" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/dejavusansmono"
+                android:gravity="center_vertical"
+                android:text="M\n28"
+                android:textAlignment="center"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/unprotected_sex" />
+
+            </TableRow>
+
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/gradient_border" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/dejavusansmono"
+                android:gravity="center_vertical"
+                android:text="M\n28"
+                android:textAlignment="center"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom"
+                    app:srcCompat="@drawable/no_sex"/>
+
+            </TableRow>
+
+        </LinearLayout>
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/gradient_border"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/dejavusansmono"
+                android:gravity="center_vertical"
+                android:text="M\n28"
+                android:textAlignment="center"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/unprotected_sex"/>
+
+            </TableRow>
+
+        </LinearLayout>
+    </TableRow>
+</LinearLayout>
+</com.production.outlau.sextracker.MyLinearLayout>
+</LinearLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:gravity="center">
+
+<com.production.outlau.sextracker.MyLinearLayout
+android:id="@+id/root"
+android:layout_width="match_parent"
+android:layout_height="200dp"
+android:gravity="center"
+android:orientation="vertical">
+
+<LinearLayout
+    android:id="@+id/WeekList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:baselineAligned="false">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/dejavusansmono"
+                android:gravity="center_vertical"
+                android:text="M\n28"
+                android:textAlignment="center"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom"
+                    app:srcCompat="@drawable/no_sex" />
+
+            </TableRow>
+
+        </LinearLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/gradient_border" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/dejavusansmono"
+                android:gravity="center_vertical"
+                android:text="M\n28"
+                android:textAlignment="center"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom"
+                    app:srcCompat="@drawable/no_sex" />
+            </TableRow>
+
+        </LinearLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/gradient_border" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/dejavusansmono"
+                android:gravity="center_vertical"
+                android:text="M\n28"
+                android:textAlignment="center"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom"
+                    app:srcCompat="@drawable/no_sex" />
+            </TableRow>
+
+        </LinearLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/gradient_border" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/dejavusansmono"
+                android:gravity="center_vertical"
+                android:text="M\n28"
+                android:textAlignment="center"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom"
+                    app:srcCompat="@drawable/no_sex" />
+            </TableRow>
+
+        </LinearLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/gradient_border" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/dejavusansmono"
+                android:gravity="center_vertical"
+                android:text="M\n28"
+                android:textAlignment="center"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom"
+                    app:srcCompat="@drawable/no_sex" />
+            </TableRow>
+
+        </LinearLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/gradient_border" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/dejavusansmono"
+                android:gravity="center_vertical"
+                android:text="M\n28"
+                android:textAlignment="center"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom"
+                    app:srcCompat="@drawable/no_sex" />
+            </TableRow>
+
+        </LinearLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/gradient_border" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/dejavusansmono"
+                android:gravity="center_vertical"
+                android:text="M\n28"
+                android:textAlignment="center"
+                android:textColor="?attr/colorButtonNormal"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom"
+                    app:srcCompat="@drawable/no_sex" />
+            </TableRow>
+
+        </LinearLayout>
+
+    </TableRow>
+-->
