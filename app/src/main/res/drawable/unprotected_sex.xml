@@ -2,7 +2,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item >
         <shape android:shape="oval">
-            <stroke android:width="3dp" android:color="@color/unprotectedSex" />
+            <stroke android:width="2dp" android:color="@color/unprotectedSex" />
         </shape>
     </item>
 </layer-list>

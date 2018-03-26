@@ -3,32 +3,29 @@ package com.production.outlau.sextracker;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.PagerAdapter;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
-import android.widget.Switch;
+import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -52,8 +49,85 @@ public class MainActivity extends FragmentActivity {
     private final static String[] months = new String[]{"January","February","March","April","May","June","July","August","September","October","November","December"};
 
     public void onCreate(Bundle savedInstanceState) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
+
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
+
+// notificationId is a unique int for each notification that you must define
+        notificationManager.notify(0, buildNotification().build());
+
+
+
+
+        //createNotification("HII", "bodyu","url", getApplicationContext(), 0, "id");
+
+
+
+/*
+
+        Context context = getApplicationContext();
+
+        System.out.println("RECEIVED");
+        Intent newIntent = new Intent(context, MainActivity.class);
+        newIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent2 = PendingIntent.getActivity(context, 0, newIntent, 0);
+
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
+                .setSmallIcon(R.drawable.background)
+                .setContentTitle("My notification")
+                .setContentText("Hello World!")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                // Set the intent that will fire when the user taps the notification
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
+                .addAction(new NotificationCompat.Action(
+                        R.drawable.hamburger_menu, "TEST", pendingIntent2));
+
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
+
+// notificationId is a unique int for each notification that you must define
+        notificationManager.notify(0, mBuilder.build());*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         pager = (ViewPager) findViewById(R.id.viewpager);
         monthTextView = (TextView) findViewById(R.id.month);
@@ -108,9 +182,9 @@ public class MainActivity extends FragmentActivity {
             public void onClick(View v) {
                 Intent alarmIntent = new Intent(MainActivity.this, AlarmReceiver.class);
                 pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, alarmIntent, 0);
-
+                //start();
                 openClock();
-                start();
+                //startAt10();
             }
         });
 
@@ -118,11 +192,83 @@ public class MainActivity extends FragmentActivity {
     }
 
 
+
+
+
+
+
+
+
+
+    protected NotificationCompat.Builder buildNotification() {
+
+        // Open NotificationView.java Activity
+        PendingIntent pIntent = PendingIntent.getActivity(
+                getApplicationContext(),
+                0,
+                getIntent(),
+                PendingIntent.FLAG_UPDATE_CURRENT);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext())
+                // Set Icon
+                .setSmallIcon(R.drawable.hamburger_menu)//TODO
+                .setContentTitle("PENIS")
+                // Set Ticker Message
+                .setTicker(getApplicationContext().getString(R.string.customnotificationticker))
+                // Dismiss Notification
+                .setAutoCancel(true)
+                // Set PendingIntent into Notification
+                .setContentIntent(pIntent);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            // build a complex notification, with buttons and such
+            //
+            builder = builder.setContent(getComplexNotificationView());
+        } else {
+            // Build a simpler notification, without buttons
+            //
+            builder = builder.setContentTitle(getTitle())
+                    .setContentText(getText(0))
+                    .setSmallIcon(android.R.drawable.ic_menu_gallery);
+        }
+        return builder;
+    }
+
+
+
+
+
+
+
+
+    private RemoteViews getComplexNotificationView() {
+        // Using RemoteViews to bind custom layouts into Notification
+        RemoteViews notificationView = new RemoteViews(
+                getApplicationContext().getPackageName(),
+                R.layout.notification_builder
+        );
+
+        // Locate and set the Image into customnotificationtext.xml ImageViews
+       // notificationView.setImageViewResource(
+       //         R.id.imagenotileft,
+       //         R.drawable.hamburger_menu);
+
+        // Locate and set the Text into customnotificationtext.xml TextViews
+        //notificationView.setTextViewText(R.id.title, getTitle());
+        //notificationView.setTextViewText(R.id.text, getText(0));
+
+        return notificationView;
+    }
+
+
+
+
+
+
+
     public void openClock(){
         final Dialog customDialog = new Dialog(MainActivity.this);
-        // the setContentView() method is used to set the custom layout for the dialog
         customDialog.setContentView(R.layout.clock_inflater);
-        // using window set the hight and width of custom dialog
         Window window = customDialog.getWindow();
         window.setLayout(WindowManager.LayoutParams.WRAP_CONTENT,      WindowManager.LayoutParams.WRAP_CONTENT);    window.setGravity(Gravity.CENTER);
         window.setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
@@ -138,12 +284,6 @@ public class MainActivity extends FragmentActivity {
         });
 
         arc.setOnSeekArcChangeListener(new SeekArc.OnSeekArcChangeListener() {
-            SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
-            //String time = timeFormat.format(Globals.calendar.getTime());
-
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-            //String date = dateFormat.format(Globals.calendar.getTime());
-
             Calendar calendar = Calendar.getInstance();
             int isPM = 0;
             int hours;
@@ -201,256 +341,76 @@ public class MainActivity extends FragmentActivity {
     }
 
 
-    public void openTimer1(final View view){
-
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-
-        //set the top text of alert box
-        TextView title = new TextView(this);
-        title.setText("HOW MUCH MINS?");
-        title.setPadding(40,40,0,0);
-
-        //set a frame layout to add views to
-        FrameLayout layout = new FrameLayout(this);
-        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT);
-        layout.setLayoutParams(params);
-        layout.setPadding(2, 2, 2, 2);
-
-        //TODO set time to server time
-
-        /*
-         * HOURS AND MINUTES
-         */
-
-        //Get hours from system
-        String hourTimePattern = "HH";
-        SimpleDateFormat hourTimeFormat = new SimpleDateFormat(hourTimePattern);
-        int hour = Integer.parseInt(hourTimeFormat.format(new Date()));
-        String hourTime = hourTimeFormat.format(new Date());
-
-        //Get minutes from system
-        String minuteTimePattern = "mm";
-        SimpleDateFormat minuteTimeFormat = new SimpleDateFormat(minuteTimePattern);
-        int minute = Integer.parseInt(minuteTimeFormat.format(new Date()));
-        String minuteTime = minuteTimeFormat.format(new Date());
-
-        //Set time to time textview
-        final TextView timeText = new TextView(this);
-        timeText.setText(hourTime+":"+minuteTime);
-        timeText.setGravity(Gravity.CENTER);
-        timeText.setPadding(0,0,0,50);
-
-        /*
-         * DATE
-         */
-
-        //Get date from system
-        String datePattern = "dd/MM/yyyy";
-        SimpleDateFormat dateFormat = new SimpleDateFormat(datePattern);
-        String date = dateFormat.format(new Date());
-
-        //Set date to date textview
-        final TextView dateText = new TextView(this);
-        dateText.setText(date);
-        dateText.setGravity(Gravity.CENTER);
-        dateText.setPadding(0,50,0,0);
-
-        //Add time views to layout
-        layout.addView(timeText);
-        layout.addView(dateText);
-
-        View tv = (View) getLayoutInflater().inflate(R.layout.clock_inflater, layout, true);
-        final SeekArc arc = (SeekArc) tv.findViewById(R.id.seekArc);
-
-        //ON CREATE SET TO TIME
-        arc.setProgress((hour%12)*30 + minute/2);
-
-        alert.setCustomTitle(title);
-        alert.setView(layout);
-        alert.setCancelable(true);
 
 
-/*
-        if (hour >= 12){
-            Globals.isPM = 1;
-        }
-        else{
-            Globals.isPM = 0;
-        }
-        final int startingIsPm = Globals.isPM;
 
-        Globals.calendar = Calendar.getInstance();
-        Globals.startupCalendar = Calendar.getInstance();
-        Globals.hour = hour;
-        Globals.minute = minute;
-        Globals.startingProgress = arc.getProgress();
+
+
+
+
+
+
+   /* public static void createNotification(String title, String body,String image_url, Context context, int notificationsId, String single_id) {
+        Intent notificationIntent;
+
+        long when = System.currentTimeMillis();
+        int id = (int) System.currentTimeMillis();
+
+        NotificationCompat.BigPictureStyle notifystyle = new NotificationCompat.BigPictureStyle();
+        //notifystyle.bigPicture(bitmap);
+        RemoteViews contentView = new RemoteViews(context.getPackageName(), R.layout.notification_builder);
+        //contentView.setImageViewBitmap(R.id.image, bitmap);
+        contentView.setTextViewText(R.id.text_view, body);
+
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
+                .setSmallIcon(R.drawable.hamburger_menu)
+                .setStyle(notifystyle)
+                .setCustomBigContentView(contentView)
+                .setContentText(body);
+        NotificationManager mNotificationManager = (NotificationManager) context
+                .getSystemService(Context.NOTIFICATION_SERVICE);
+
+        notificationIntent = new Intent(context, MainActivity.class);
+        notificationIntent.putExtra("single_id",single_id);
+        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent contentIntent = PendingIntent.getActivity(context, id, notificationIntent, 0);
+
+        Notification notification = mBuilder.build();
+        notification.contentIntent = contentIntent;
+        notification.flags |= Notification.FLAG_AUTO_CANCEL;
+        notification.defaults |= Notification.DEFAULT_SOUND;
+        notification.defaults |= Notification.DEFAULT_VIBRATE;
+
+
+        mNotificationManager.notify(notificationsId, notification);
+
+    }
 
 */
 
-        arc.setOnSeekArcChangeListener(new SeekArc.OnSeekArcChangeListener() {
-            SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
-            //String time = timeFormat.format(Globals.calendar.getTime());
 
-            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-            //String date = dateFormat.format(Globals.calendar.getTime());
 
-            int isPM = 0;
-            @Override
-            public void onProgressChanged(SeekArc seekArc, int progress, boolean fromUser) {
-                int curMins = seekArc.getProgress();
 
-                double hours = Math.floor(12*curMins/360);
-                double minutes = 2*curMins % 60;
 
-                isPM += arc.getChangeSignState() + 2;
-                isPM %= 2;
 
-                if (isPM == 1){
-                    hours += 12;
-                }
-                /*
-                if(hours > 13 || hours <11 ){
-                    Globals.calendar.add(Calendar.DAY_OF_YEAR, arc.getChangeSignState());
-                }
 
-                Globals.calendar.set(Calendar.HOUR_OF_DAY,(int)hours);
-                Globals.calendar.set(Calendar.MINUTE,(int)minutes);
 
-                try{
 
-                    SimpleDateFormat dateFormatConst = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
-                    String curDateStr = dateFormatConst.format(Globals.calendar.getTime());
-                    String dateConstStr = dateFormatConst.format(Globals.startupCalendar.getTime());
 
-                    Date curDate = dateFormatConst.parse(curDateStr);
-                    Date dateConst = dateFormatConst.parse(dateConstStr);
 
-                    if (curDate.compareTo(dateConst)<0){
-                        //TODO eliminate preceeding seekarc - right now the arc before startHour is visible - dont want that
-                        Globals.isBelow = true;
-                    }
-                    else{
-                        Globals.isBelow = false;
-                    }
 
-                }catch (ParseException e1){
-                    e1.printStackTrace();
-                }
-                */
 
-                //time = timeFormat.format(Globals.calendar.getTime());
-                //date = dateFormat.format(Globals.calendar.getTime());
 
-                timeText.setText((Double.toString(hours) + Double.toString(minutes)));//time.toString());
-                dateText.setText("TEST");  //date.toString());
-            }
 
-            @Override
-            public void onStartTrackingTouch(SeekArc seekArc) {
-                arc.setPositive(arc.getProgress());
-            }
 
-            @Override
-            public void onStopTrackingTouch(SeekArc seekArc) {
-                /*if(Globals.isBelow) {
 
-                    arc.setProgress(Globals.startingProgress);
-                    time = timeFormat.format(Globals.startupCalendar.getTime());
-                    date = dateFormat.format(Globals.startupCalendar.getTime());
-
-                    Globals.calendar = Calendar.getInstance();
-                    Globals.isPM = startingIsPm;
-
-                    timeText.setText(time.toString());
-                    dateText.setText(date.toString());
-                    Globals.isBelow = false;
-                }
-                */
-            }
-        });
-
-        // Setting Negative "Cancel" Button
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                dialog.cancel();
-            }
-        });
-
-        // Setting Positive "OK" Button
-        alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-
-                /*
-                Switch thisSwitch = (Switch) findViewById(view.getId() - 3);
-
-                try{
-                    SimpleDateFormat dateFormatConst = new SimpleDateFormat("HH:mm dd/MM/yyyy");
-
-                    String curDateStr = dateFormatConst.format(Globals.calendar.getTime());
-                    String dateConstStr = dateFormatConst.format(Globals.startupCalendar.getTime());
-
-                    Date curDate = dateFormatConst.parse(curDateStr);
-                    Date dateConst = dateFormatConst.parse(dateConstStr);
-
-                    TextView changeStateTime = (TextView) findViewById(view.getId());
-
-                    changeStateTime.setGravity(Gravity.CENTER);
-                    changeStateTime.setPadding(0,5,5,5);
-
-                    if (curDate.compareTo(dateConst)<=0) {
-                        changeStateTime.setText("Silly rabbit! That's right now.");
-                    }
-
-                    else{
-                        changeStateTime.setText("This appliance will turn " + (thisSwitch.isChecked() ? "off" : "on") + " at " + curDateStr.toString());
-
-                        long timeSinceEpoch = Globals.calendar.getTime().getTime()/1000;
-
-                        final String buttonID = getResources().getResourceEntryName(thisSwitch.getId());
-
-                        requestQueue = Volley.newRequestQueue(MainActivity.this);
-
-                        StringRequest stringRequest = new StringRequest(Request.Method.GET,
-                                "http://outlau.ddns.net/lights/exec_at_time.php?time=" + timeSinceEpoch + "&state=" + (thisSwitch.isChecked() ? 0 : 1) + "&ID=" + buttonID,
-                                new Response.Listener<String>() {
-                                    @Override
-                                    public void onResponse(String response) {
-                                        requestQueue.stop();
-                                    }
-                                }, new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                System.out.println("error");
-                                requestQueue.stop();
-                            }
-
-                        });
-                        requestQueue.add(stringRequest);
-                    }
-                }catch (ParseException e1){
-                    e1.printStackTrace();
-                }
-                */
-            }
-        });
-
-        AlertDialog alertDialog = alert.create();
-
-        try {
-            alertDialog.show();
-        } catch (Exception e) {
-            // WindowManager$BadTokenException will be caught and the app would
-            // not display the 'Force Close' message
-            e.printStackTrace();
-        }
-    }
 
 
 
     public void start() {
         AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        int interval = 8;
+        int interval = 1;
 
         manager.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), interval, pendingIntent);
         //Toast.makeText(this, "Alarm Set", Toast.LENGTH_SHORT).show();
@@ -470,8 +430,8 @@ public class MainActivity extends FragmentActivity {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.add(Calendar.MINUTE,1);
-//        calendar.set(Calendar.HOUR_OF_DAY, 21);
-  //      calendar.set(Calendar.MINUTE, 43);
+        calendar.set(Calendar.HOUR_OF_DAY, 23);
+        calendar.set(Calendar.MINUTE, 32);
 
         /* Repeating on every 20 minutes interval */
         manager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),

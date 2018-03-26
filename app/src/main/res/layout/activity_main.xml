@@ -33,9 +33,9 @@
                 android:textAlignment="center"
                 android:textColor="@color/monthTextColor"
                 android:textSize="30sp"
-                custom:font="@font"/>
+                custom:font="@string/lato_regular"/>
 
-            <android.support.v7.widget.AppCompatTextView
+            <com.production.outlau.sextracker.CustomTextView
                 android:id="@+id/year"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
@@ -45,7 +45,8 @@
                 android:text="2018"
                 android:textAlignment="center"
                 android:textColor="@color/yearTextColor"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                custom:font="@string/lato_light"/>
 
         </LinearLayout>
 

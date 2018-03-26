@@ -5,4 +5,11 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="lato_hairline">lato_hairline.ttf</string>
+    <string name="lato_light">lato_light.ttf</string>
+    <string name="lato_regular">lato_regular.ttf</string>
+
+
+    <string name="customnotificationticker">this is the custom notification ticker</string>
 </resources>

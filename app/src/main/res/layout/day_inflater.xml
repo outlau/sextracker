@@ -2,6 +2,7 @@
 <TableRow
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -16,7 +17,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.v7.widget.AppCompatTextView
+        <com.production.outlau.sextracker.CustomTextView
             android:id="@+id/day"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -27,7 +28,8 @@
             android:text="M\n28"
             android:textAlignment="center"
             android:textColor="?attr/colorButtonNormal"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            custom:font="@string/lato_light"/>
 
         <TableRow
             android:id="@+id/rating_parent"
